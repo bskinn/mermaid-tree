@@ -1,2 +1,2 @@
 # mermaid-tree
-Generate source for a Mermaid filesystem tree flowchart
+Generates source for a Mermaid filesystem tree flowchart

@@ -1,0 +1,17 @@
+{
+  "name": "@bskinn/mermaid-tree",
+  "version": "0.1.0",
+  "description": "Generates source for a Mermaid filesystem tree flowchart",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mermaid",
+    "filesystem",
+    "tree",
+    "flowchart"
+  ],
+  "author": "Brian Skinn",
+  "license": "MIT"
+}
