@@ -1,6 +1,6 @@
-import type { TNodeShapeDelims } from "./types"
+import type { TNodeShapeDelims } from './types'
 
-import { E_NodeShapes } from "./enums"
+import { E_NodeShapes } from './enums'
 
 export const MARKER_STRING_START = '<!-- mermaid-fs-diagram -->'
 export const MARKER_STRING_STOP = '<!-- mermaid-fs-diagram-stop -->'
