@@ -17,3 +17,16 @@ export const NODE_SHAPES: { [key in E_NodeShapes]: TNodeShapeDelims } = {
 
 export const SRC_OPEN_LINE = '```mermaid'
 export const SRC_CLOSE_LINE = '```'
+
+export const CONFIG = {
+  BORDER: 'border',
+  COLOR: 'color',
+  FILES: 'files',
+  DIR: 'dir',
+  FILL: 'fill',
+  INDENT: 'indent',
+  LINE: 'line',
+  OUTPUT: 'output',
+  SUFFIX: 'suffix',
+  TEXT: 'text',
+}

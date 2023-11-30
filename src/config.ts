@@ -1,4 +1,4 @@
-import * as conf_const from './conf_consts'
+import { CONFIG } from './consts'
 
 const DEFAULTS = {}
 
