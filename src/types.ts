@@ -7,7 +7,7 @@ export type TFileName = string
 export type TDirContents = { dirs: Array<TDirName>; files: Array<TFileName> }
 export type TDirTreeNode = {
   dirName: TDirName
-  nodeName: string
+  nodeName: string // Name to use for the node in the Mermaid source
   parents: Array<TDirName>
   subdirs: Array<TDirTreeNode>
   files: Array<TFileName>
