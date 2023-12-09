@@ -1,5 +1,6 @@
-import * as fs from 'fs'
 import type { TDirContents, TDirName, TDirTreeNode, TFileName } from './types'
+
+import * as fs from 'fs'
 
 /**
  * Retrieve the file and subdirectory contents of a given directory.
