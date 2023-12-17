@@ -38,6 +38,9 @@ export type TConfigFull = {
   [E_ConfigKeys.Mermaid]: {
     [E_ConfigKeys.DirNodeName]: string
     [E_ConfigKeys.Indent]: number
+    [E_ConfigKeys.Suffix]: {
+      [E_ConfigKeys.Files]: string
+    }
   }
 }
 
