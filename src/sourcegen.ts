@@ -9,6 +9,14 @@ import {
   composeThemeSettingsLineConfig,
 } from './templates'
 
+/**
+ * Create an array of Mermaid source lines for a given node in the
+ * directory tree.
+ *
+ * @param {TDirTreeNode} node - The directory tree node to process
+ * @param {TConfigFull} config - Configuration object to use in creating the source
+ * @returns {Array<string>} - Array of Mermaid source lines for the node
+ */
 export const assembleNodeSource = (
   node: TDirTreeNode,
   config: TConfigFull = CONFIG_DEFAULTS,
@@ -66,6 +74,16 @@ export const assembleNodeSource = (
   return sourceArray
 }
 
+/**
+ * Recursively create Mermaid source lines for the entire directory tree
+ * descending from the indicated root node.
+ *
+ * @param {TDirTreeNode} root - Root directory node of the tree to create Mermaid
+ *    source for
+ * @param {TConfigFull} config - Configuration object to use in creating the source
+ * @returns {ArrayArray<<string>>} - Array of Arrays of Mermaid source lines for the
+ *    node tree. Each inner Array contains the source lines from one directory node
+ */
 export const assembleAllNodeSources = (
   root: TDirTreeNode,
   config: TConfigFull = CONFIG_DEFAULTS,
@@ -81,6 +99,20 @@ export const assembleAllNodeSources = (
   return sourcesArray
 }
 
+/**
+ * Compose the complete source for a Mermaid diagram given an array of source strings
+ * representing the contents of a directory tree.
+ *
+ * _Any_ valid set of Mermaid source lines for a flow diagram should likely work here,
+ * but we're using it for the directory map.
+ *
+ * @param {Array<Array<string>>} sourcesArray - Array of Arrays of Mermaid flow chart
+ *    source lines
+ * @param {TConfigFull} config - Configuration object to use in creating the source
+ * @param {string} extraThemeVariables - Any additional Mermaid theme variables to
+ *    apply, in addition to those provided for via {@link config}
+ * @returns {string} - Composited, complete source for the Mermaid flow diagram
+ */
 export const composeMermaidSource = (
   sourcesArray: Array<Array<string>>,
   config: TConfigFull = CONFIG_DEFAULTS,
