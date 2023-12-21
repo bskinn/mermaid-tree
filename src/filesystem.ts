@@ -31,7 +31,7 @@ export const getDirContents = (dirPath: TDirName): TDirContents => {
  * @param {Array<TDirName>} parents - Array of parent directory names
  * @returns {TDirTreeNode} - Tree node containing current directory and all children
  */
-const buildDirTree = (
+export const buildDirTree = (
   dirName: TDirName,
   parents: Array<TDirName> = [],
 ): TDirTreeNode => {
