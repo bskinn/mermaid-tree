@@ -26,7 +26,7 @@ const CONFIG_DEFAULTS: TConfigFull = {
   [E_ConfigKeys.Mermaid]: {
     [E_ConfigKeys.DirNodeName]: 'dirNode',
     [E_ConfigKeys.Indent]: 2,
-    [E_ConfigKeys.Suffix]: { [E_ConfigKeys.Files]: 'Files' },
+    [E_ConfigKeys.Suffix]: { [E_ConfigKeys.Files]: '____files' },
   },
 }
 
