@@ -8,6 +8,7 @@
     "build": "run-s clean build-only",
     "clean": "node -e \"fs = require('fs'); fs.rmSync('dist', {recursive: true, force: true})\"",
     "build-only": "npx tsc",
+    "check-types": "npx tsc --noEmit",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
