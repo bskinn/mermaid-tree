@@ -47,11 +47,15 @@ export const buildDirTree = (
   /*
     It appears that node names in Mermaid are *case-sensitive*:
       https://www.reddit.com/r/Notion/comments/rybwkx/notion_mermaid_gotchas_potential_pitfalls_that_i/
-    
+
     Thus, by choosing the all-lowercase name 'root' for the name
     for the root directory node, we shouldn't have to worry about
     node name collisions if there happens to be a top-level
     subdirectory named 'root'.
+
+    Also, we .slice(1) the pathArray so that if we have a long path
+    passed into the top-level function as the root, it doesn't give us
+    annoyingly long node names.
   */
   return {
     parents: parents,
@@ -59,7 +63,8 @@ export const buildDirTree = (
     nodeName:
       parents.length == 0
         ? 'root'
-        : pathArray.slice(1)
+        : pathArray
+            .slice(1)
             .map((dir) => dir.replace(/[^0-9a-z]/gi, ''))
             .map((dir) => dir[0].toUpperCase() + dir.slice(1))
             .join(''),
