@@ -19,6 +19,10 @@
   ],
   "author": "Brian Skinn",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bskinn/mermaid-tree.git"
+  },
   "dependencies": {
     "commander": "^11.1.0",
     "ts-node": "^10.9.1",
