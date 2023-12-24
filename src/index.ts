@@ -3,4 +3,4 @@ export {
   assembleAllNodeSources,
   assembleNodeSource,
   composeMermaidSource,
-} from './sourcegen'
+} from './source-gen'
