@@ -1,5 +1,5 @@
 export { NODE_SHAPES } from './consts'
-export { E_NodeShapes } from './enums'
+export { E_NodeShape } from './enums'
 export { buildDirTree, renderDirTree } from './filesystem'
 export {
   assembleAllNodeSources,

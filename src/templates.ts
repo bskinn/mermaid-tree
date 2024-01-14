@@ -1,6 +1,6 @@
 import type { TConfigFull } from './types'
 
-import { E_ConfigKeys } from './enums'
+import { E_ConfigKey } from './enums'
 
 /**
  * Compose the theme settings line for a Mermaid diagram source block from
@@ -44,14 +44,14 @@ export const composeThemeSettingsLineConfig = (
   config: TConfigFull,
   extraThemeVariables: string = '',
 ): string => {
-  const fontSize: number = config[E_ConfigKeys.Text][E_ConfigKeys.Size]
-  const lineColor: string = config[E_ConfigKeys.Color][E_ConfigKeys.Line]
+  const fontSize: number = config[E_ConfigKey.Text][E_ConfigKey.Size]
+  const lineColor: string = config[E_ConfigKey.Color][E_ConfigKey.Line]
   const filesFillColor: string =
-    config[E_ConfigKeys.Color][E_ConfigKeys.Files][E_ConfigKeys.Fill]
+    config[E_ConfigKey.Color][E_ConfigKey.Files][E_ConfigKey.Fill]
   const filesBorderColor: string =
-    config[E_ConfigKeys.Color][E_ConfigKeys.Files][E_ConfigKeys.Border]
+    config[E_ConfigKey.Color][E_ConfigKey.Files][E_ConfigKey.Border]
   const filesTextColor: string =
-    config[E_ConfigKeys.Color][E_ConfigKeys.Files][E_ConfigKeys.Text]
+    config[E_ConfigKey.Color][E_ConfigKey.Files][E_ConfigKey.Text]
 
   return composeThemeSettingsLine(
     fontSize,
@@ -92,13 +92,13 @@ export const composeDirNodeDefLine = (
  */
 export const composeDirNodeDefLineConfig = (config: TConfigFull) => {
   const dirNodeName: string =
-    config[E_ConfigKeys.Mermaid][E_ConfigKeys.DirNodeName]
+    config[E_ConfigKey.Mermaid][E_ConfigKey.DirNodeName]
   const dirFillColor: string =
-    config[E_ConfigKeys.Color][E_ConfigKeys.Dir][E_ConfigKeys.Fill]
+    config[E_ConfigKey.Color][E_ConfigKey.Dir][E_ConfigKey.Fill]
   const dirBorderColor: string =
-    config[E_ConfigKeys.Color][E_ConfigKeys.Dir][E_ConfigKeys.Border]
+    config[E_ConfigKey.Color][E_ConfigKey.Dir][E_ConfigKey.Border]
   const dirTextColor: string =
-    config[E_ConfigKeys.Color][E_ConfigKeys.Dir][E_ConfigKeys.Text]
+    config[E_ConfigKey.Color][E_ConfigKey.Dir][E_ConfigKey.Text]
 
   return composeDirNodeDefLine(
     dirNodeName,

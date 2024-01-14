@@ -1,6 +1,6 @@
 import type { TConfigFull, TDirTreeNode } from './types'
 
-import { E_ConfigKeys, E_NodeShapes } from './enums'
+import { E_ConfigKey, E_NodeShape } from './enums'
 
 import CONFIG_DEFAULTS from './config'
 import { NODE_SHAPES, SRC_CLOSE_LINE, SRC_OPEN_LINE } from './consts'
@@ -22,8 +22,8 @@ export const assembleNodeSource = (
   config: TConfigFull = CONFIG_DEFAULTS,
 ): Array<string> => {
   const fileNodeSuffix =
-    config[E_ConfigKeys.Mermaid][E_ConfigKeys.Suffix][E_ConfigKeys.Files]
-  const dirNodeName = config[E_ConfigKeys.Mermaid][E_ConfigKeys.DirNodeName]
+    config[E_ConfigKey.Mermaid][E_ConfigKey.Suffix][E_ConfigKey.Files]
+  const dirNodeName = config[E_ConfigKey.Mermaid][E_ConfigKey.DirNodeName]
 
   var sourceArray: Array<string> = []
 
@@ -44,8 +44,8 @@ export const assembleNodeSource = (
 
     sourceArray.push(
       `${node.nodeName} --> ${node.nodeName}${suffix}${
-        NODE_SHAPES[E_NodeShapes.Square].open
-      }${filesList}${NODE_SHAPES[E_NodeShapes.Square].close}`,
+        NODE_SHAPES[E_NodeShape.Square].open
+      }${filesList}${NODE_SHAPES[E_NodeShape.Square].close}`,
     )
   }
 
@@ -54,8 +54,8 @@ export const assembleNodeSource = (
   node.subdirs.forEach((sd) => {
     sourceArray.push(
       `${node.nodeName} --> ${sd.nodeName}${
-        NODE_SHAPES[E_NodeShapes.Rounded].open
-      }${sd.dirName}/${NODE_SHAPES[E_NodeShapes.Rounded].close}`,
+        NODE_SHAPES[E_NodeShape.Rounded].open
+      }${sd.dirName}/${NODE_SHAPES[E_NodeShape.Rounded].close}`,
     )
   })
 
@@ -63,9 +63,9 @@ export const assembleNodeSource = (
   // If this is the _true_ root node, we have to name it here
   if (node.parents.length == 0) {
     sourceArray.push(
-      `${node.nodeName}${NODE_SHAPES[E_NodeShapes.Rounded].open}${
+      `${node.nodeName}${NODE_SHAPES[E_NodeShape.Rounded].open}${
         node.dirName
-      }/${NODE_SHAPES[E_NodeShapes.Rounded].close}:::${dirNodeName}`,
+      }/${NODE_SHAPES[E_NodeShape.Rounded].close}:::${dirNodeName}`,
     )
   } else {
     sourceArray.push(`${node.nodeName}:::${dirNodeName}`)
@@ -123,7 +123,7 @@ export const composeMermaidSource = (
     extraThemeVariables,
   )
   const dirNodeDefLine = composeDirNodeDefLineConfig(config)
-  const indentWidth = config[E_ConfigKeys.Mermaid][E_ConfigKeys.Indent]
+  const indentWidth = config[E_ConfigKey.Mermaid][E_ConfigKey.Indent]
 
   // Initialize the list of source lines
   const mermaidSourceLines = [

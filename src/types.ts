@@ -1,4 +1,4 @@
-import { E_ConfigKeys, E_NodeShapes } from './enums'
+import { E_ConfigKey, E_NodeShape } from './enums'
 
 import { DeepPartial } from 'tsdef'
 
@@ -15,31 +15,31 @@ export type TDirTreeNode = {
 export type TNodeShapeDelims = { open: string; close: string }
 
 export type TConfigFull = {
-  [E_ConfigKeys.Color]: {
-    [E_ConfigKeys.Line]: string
-    [E_ConfigKeys.Files]: {
-      [E_ConfigKeys.Border]: string
-      [E_ConfigKeys.Fill]: string
-      [E_ConfigKeys.Text]: string
+  [E_ConfigKey.Color]: {
+    [E_ConfigKey.Line]: string
+    [E_ConfigKey.Files]: {
+      [E_ConfigKey.Border]: string
+      [E_ConfigKey.Fill]: string
+      [E_ConfigKey.Text]: string
     }
-    [E_ConfigKeys.Dir]: {
-      [E_ConfigKeys.Border]: string
-      [E_ConfigKeys.Fill]: string
-      [E_ConfigKeys.Text]: string
+    [E_ConfigKey.Dir]: {
+      [E_ConfigKey.Border]: string
+      [E_ConfigKey.Fill]: string
+      [E_ConfigKey.Text]: string
     }
   }
-  [E_ConfigKeys.Shape]: {
-    [E_ConfigKeys.Files]: E_NodeShapes
-    [E_ConfigKeys.Dir]: E_NodeShapes
+  [E_ConfigKey.Shape]: {
+    [E_ConfigKey.Files]: E_NodeShape
+    [E_ConfigKey.Dir]: E_NodeShape
   }
-  [E_ConfigKeys.Text]: {
-    [E_ConfigKeys.Size]: number
+  [E_ConfigKey.Text]: {
+    [E_ConfigKey.Size]: number
   }
-  [E_ConfigKeys.Mermaid]: {
-    [E_ConfigKeys.DirNodeName]: string
-    [E_ConfigKeys.Indent]: number
-    [E_ConfigKeys.Suffix]: {
-      [E_ConfigKeys.Files]: string
+  [E_ConfigKey.Mermaid]: {
+    [E_ConfigKey.DirNodeName]: string
+    [E_ConfigKey.Indent]: number
+    [E_ConfigKey.Suffix]: {
+      [E_ConfigKey.Files]: string
     }
   }
 }
