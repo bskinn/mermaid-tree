@@ -7,7 +7,7 @@ is in any given context.
 In my Markdown preview in VS Code on Windows, that limit falls somewhere between
 256 and 269 edges.
 
-On GitHub, that limit is somewhere between ..........?
+On GitHub, that limit is somewhere above 676 edges....
 
 ## 16 edges
 
