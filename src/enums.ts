@@ -1,6 +1,18 @@
 export enum E_NodeShapes {
   Square = 'square',
   Rounded = 'rounded',
+  Stadium = 'stadium',
+  Subroutine = 'subroutine',
+  Cylinder = 'cylinder',
+  Circle = 'circle',
+  Flag = 'flag',
+  Rhombus = 'rhombus',
+  Hexagon = 'hexagon',
+  ParallelogramR = 'parallelogram_r',
+  ParallelogramL = 'parallelogram_l',
+  TrapezoidWideBottom = 'trapezoid_bottom',
+  TrapezoidWideTop = 'trapezoid_top',
+  DoubleCircle = 'double_circle',
 }
 
 export enum E_ConfigKeys {

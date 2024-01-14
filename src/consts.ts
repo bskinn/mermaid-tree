@@ -13,6 +13,18 @@ export const MARKER_REGEX_SPAN = new RegExp(
 export const NODE_SHAPES: { [key in E_NodeShapes]: TNodeShapeDelims } = {
   [E_NodeShapes.Square]: { open: '[', close: ']' },
   [E_NodeShapes.Rounded]: { open: '(', close: ')' },
+  [E_NodeShapes.Stadium]: { open: '([', close: '])' },
+  [E_NodeShapes.Subroutine]: { open: '[[', close: ']]' },
+  [E_NodeShapes.Cylinder]: { open: '[(', close: ')]' },
+  [E_NodeShapes.Circle]: { open: '((', close: '))' },
+  [E_NodeShapes.Flag]: { open: '>', close: ']' },
+  [E_NodeShapes.Rhombus]: { open: '{', close: '}' },
+  [E_NodeShapes.Hexagon]: { open: '{{', close: '}}' },
+  [E_NodeShapes.ParallelogramR]: { open: '[/', close: '/]' },
+  [E_NodeShapes.ParallelogramL]: { open: '[\\', close: '\\]' }, // Escaped backslashes
+  [E_NodeShapes.TrapezoidWideBottom]: { open: '[/', close: '\\]' },
+  [E_NodeShapes.TrapezoidWideTop]: { open: '[\\', close: '/]' },
+  [E_NodeShapes.DoubleCircle]: { open: '(((', close: ')))' },
 }
 
 export const SRC_OPEN_LINE = '```mermaid'
