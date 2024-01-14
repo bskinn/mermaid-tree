@@ -6,3 +6,4 @@ export {
   assembleNodeSource,
   composeMermaidSource,
 } from './source-gen'
+export { injectMermaidSource } from './source-inject'
