@@ -2,7 +2,7 @@
   "name": "@bskinn/mermaid-tree",
   "version": "0.1.0",
   "description": "Generates source for a Mermaid filesystem tree flowchart",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "format": "npx prettier -w .",
     "build": "run-s clean build-only",
