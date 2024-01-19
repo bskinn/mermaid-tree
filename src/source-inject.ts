@@ -6,6 +6,15 @@ import {
   MARKER_STRING_STOP,
 } from './consts'
 
+/**
+ * Perform the substitution of Mermaid diagram code block source into a
+ * given overall Markdown source string.
+ *
+ * @param {string} inputSource - Markdown source string into which to inject
+ *    the Mermaid source
+ * @param {string} mermaidSource - Mermaid source string to inject
+ * @returns {string} Input source with added/modified Mermaid diagram source
+ */
 export const injectMermaidSource = (
   inputSource: string,
   mermaidSource: string,
