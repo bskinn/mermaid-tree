@@ -20,6 +20,7 @@ export enum E_ConfigKey {
   Color = 'color',
   Dir = 'dir',
   DirNodeName = 'dir-node-name',
+  DryRun = 'dry-run',
   Files = 'files',
   Fill = 'fill',
   Indent = 'indent',
@@ -29,5 +30,6 @@ export enum E_ConfigKey {
   Shape = 'shape',
   Size = 'size',
   Suffix = 'suffix',
+  System = 'system',
   Text = 'text',
 }

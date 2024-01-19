@@ -1,3 +1,5 @@
+import { E_ConfigKey } from './enums'
+
 import * as fs from 'fs'
 
 import {
@@ -7,6 +9,7 @@ import {
   MARKER_STRING_START,
   MARKER_STRING_STOP,
 } from './consts'
+import { TConfigFull } from './types'
 
 /**
  * Perform the substitution of Mermaid diagram code block source into a
@@ -46,20 +49,22 @@ export const injectMermaidSource = (
  *
  * @param {string} outputFilePath - Path to the file to update
  * @param {string} mermaidSource - Source string for the new Mermaid graph
- * @param {boolean} dryRun - Whether to actually modify the file
+ * @param {TConfigFull} config - Whether to actually modify the file
  */
 export const updateMarkdownFile = (
   outputFilePath: string,
   mermaidSource: string,
-  dryRun: boolean = false,
+  config: TConfigFull,
 ): void => {
   const newFileContents = injectMermaidSource(
     fs.readFileSync(outputFilePath).toString(),
     mermaidSource,
   )
 
-  if (dryRun) {
-    console.log(`Would update ${outputFilePath} to become:\n\n${newFileContents}`)
+  if (config[E_ConfigKey.System][E_ConfigKey.DryRun]) {
+    console.log(
+      `Would update ${outputFilePath} to become:\n\n${newFileContents}`,
+    )
   } else {
     fs.writeFileSync(outputFilePath, newFileContents)
   }

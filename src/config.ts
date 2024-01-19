@@ -28,6 +28,9 @@ const CONFIG_DEFAULTS: TConfigFull = {
     [E_ConfigKey.Indent]: 2,
     [E_ConfigKey.Suffix]: { [E_ConfigKey.Files]: '____files' },
   },
+  [E_ConfigKey.System]: {
+    [E_ConfigKey.DryRun]: false,
+  },
 }
 
 export default CONFIG_DEFAULTS

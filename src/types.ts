@@ -42,6 +42,9 @@ export type TConfigFull = {
       [E_ConfigKey.Files]: string
     }
   }
+  [E_ConfigKey.System]: {
+    [E_ConfigKey.DryRun]: boolean
+  }
 }
 
 export type TConfigPartial = DeepPartial<TConfigFull>
