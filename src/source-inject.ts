@@ -1,3 +1,5 @@
+import * as fs from 'fs'
+
 import {
   MARKER_REGEX_SPAN,
   MARKER_REGEX_START,
@@ -39,4 +41,26 @@ export const injectMermaidSource = (
   }
 }
 
-// TODO: Add function to update a Markdown file in-place
+/**
+ * Update the Markdown diagram source in the file at the indicated path
+ *
+ * @param {string} outputFilePath - Path to the file to update
+ * @param {string} mermaidSource - Source string for the new Mermaid graph
+ * @param {boolean} dryRun - Whether to actually modify the file
+ */
+export const updateMarkdownFile = (
+  outputFilePath: string,
+  mermaidSource: string,
+  dryRun: boolean = false,
+): void => {
+  const newFileContents = injectMermaidSource(
+    fs.readFileSync(outputFilePath).toString(),
+    mermaidSource,
+  )
+
+  if (dryRun) {
+    console.log(`Would update ${outputFilePath} to become:\n\n${newFileContents}`)
+  } else {
+    fs.writeFileSync(outputFilePath, newFileContents)
+  }
+}
