@@ -1,6 +1,6 @@
 import type { TNodeShapeDelims } from './types'
 
-import { E_NodeShape } from './enums'
+import { ENodeShape } from './enums'
 
 export const MARKER_STRING_START = '<!-- mermaid-fs-diagram -->'
 export const MARKER_STRING_STOP = '<!-- mermaid-fs-diagram-stop -->'
@@ -10,21 +10,21 @@ export const MARKER_REGEX_SPAN = new RegExp(
   `${MARKER_STRING_START}[\\w\\W]+?${MARKER_STRING_STOP}`,
 )
 
-export const NODE_SHAPES: { [key in E_NodeShape]: TNodeShapeDelims } = {
-  [E_NodeShape.Square]: { open: '[', close: ']' },
-  [E_NodeShape.Rounded]: { open: '(', close: ')' },
-  [E_NodeShape.Stadium]: { open: '([', close: '])' },
-  [E_NodeShape.Subroutine]: { open: '[[', close: ']]' },
-  [E_NodeShape.Cylinder]: { open: '[(', close: ')]' },
-  [E_NodeShape.Circle]: { open: '((', close: '))' },
-  [E_NodeShape.Flag]: { open: '>', close: ']' },
-  [E_NodeShape.Rhombus]: { open: '{', close: '}' },
-  [E_NodeShape.Hexagon]: { open: '{{', close: '}}' },
-  [E_NodeShape.ParallelogramR]: { open: '[/', close: '/]' },
-  [E_NodeShape.ParallelogramL]: { open: '[\\', close: '\\]' }, // Escaped backslashes
-  [E_NodeShape.TrapezoidWideBottom]: { open: '[/', close: '\\]' },
-  [E_NodeShape.TrapezoidWideTop]: { open: '[\\', close: '/]' },
-  [E_NodeShape.DoubleCircle]: { open: '(((', close: ')))' },
+export const NODE_SHAPES: { [key in ENodeShape]: TNodeShapeDelims } = {
+  [ENodeShape.Square]: { open: '[', close: ']' },
+  [ENodeShape.Rounded]: { open: '(', close: ')' },
+  [ENodeShape.Stadium]: { open: '([', close: '])' },
+  [ENodeShape.Subroutine]: { open: '[[', close: ']]' },
+  [ENodeShape.Cylinder]: { open: '[(', close: ')]' },
+  [ENodeShape.Circle]: { open: '((', close: '))' },
+  [ENodeShape.Flag]: { open: '>', close: ']' },
+  [ENodeShape.Rhombus]: { open: '{', close: '}' },
+  [ENodeShape.Hexagon]: { open: '{{', close: '}}' },
+  [ENodeShape.ParallelogramR]: { open: '[/', close: '/]' },
+  [ENodeShape.ParallelogramL]: { open: '[\\', close: '\\]' }, // Escaped backslashes
+  [ENodeShape.TrapezoidWideBottom]: { open: '[/', close: '\\]' },
+  [ENodeShape.TrapezoidWideTop]: { open: '[\\', close: '/]' },
+  [ENodeShape.DoubleCircle]: { open: '(((', close: ')))' },
 }
 
 export const SRC_OPEN_LINE = '```mermaid'

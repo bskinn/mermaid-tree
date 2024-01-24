@@ -1,4 +1,4 @@
-export enum E_NodeShape {
+export enum ENodeShape {
   Square = 'square',
   Rounded = 'rounded',
   Stadium = 'stadium',
@@ -15,7 +15,7 @@ export enum E_NodeShape {
   DoubleCircle = 'double_circle',
 }
 
-export enum E_ConfigKey {
+export enum EConfigKey {
   Border = 'border',
   Color = 'color',
   Dir = 'dir',

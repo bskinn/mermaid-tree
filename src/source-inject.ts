@@ -1,4 +1,4 @@
-import { E_ConfigKey } from './enums'
+import { EConfigKey } from './enums'
 
 import * as fs from 'fs'
 
@@ -61,7 +61,7 @@ export const updateMarkdownFile = (
     mermaidSource,
   )
 
-  if (config[E_ConfigKey.System][E_ConfigKey.DryRun]) {
+  if (config[EConfigKey.System][EConfigKey.DryRun]) {
     console.log(
       `Would update ${outputFilePath} to become:\n\n${newFileContents}`,
     )

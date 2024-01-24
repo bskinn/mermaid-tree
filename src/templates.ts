@@ -1,6 +1,6 @@
 import type { TConfigFull } from './types'
 
-import { E_ConfigKey } from './enums'
+import { EConfigKey } from './enums'
 
 /**
  * Compose the theme settings line for a Mermaid diagram source block from
@@ -44,14 +44,14 @@ export const composeThemeSettingsLineConfig = (
   config: TConfigFull,
   extraThemeVariables: string = '',
 ): string => {
-  const fontSize: number = config[E_ConfigKey.Text][E_ConfigKey.Size]
-  const lineColor: string = config[E_ConfigKey.Color][E_ConfigKey.Line]
+  const fontSize: number = config[EConfigKey.Text][EConfigKey.Size]
+  const lineColor: string = config[EConfigKey.Color][EConfigKey.Line]
   const filesFillColor: string =
-    config[E_ConfigKey.Color][E_ConfigKey.Files][E_ConfigKey.Fill]
+    config[EConfigKey.Color][EConfigKey.Files][EConfigKey.Fill]
   const filesBorderColor: string =
-    config[E_ConfigKey.Color][E_ConfigKey.Files][E_ConfigKey.Border]
+    config[EConfigKey.Color][EConfigKey.Files][EConfigKey.Border]
   const filesTextColor: string =
-    config[E_ConfigKey.Color][E_ConfigKey.Files][E_ConfigKey.Text]
+    config[EConfigKey.Color][EConfigKey.Files][EConfigKey.Text]
 
   return composeThemeSettingsLine(
     fontSize,
@@ -91,14 +91,13 @@ export const composeDirNodeDefLine = (
  * @returns {string} - Composited directory-node class definition source line
  */
 export const composeDirNodeDefLineConfig = (config: TConfigFull) => {
-  const dirNodeName: string =
-    config[E_ConfigKey.Mermaid][E_ConfigKey.DirNodeName]
+  const dirNodeName: string = config[EConfigKey.Mermaid][EConfigKey.DirNodeName]
   const dirFillColor: string =
-    config[E_ConfigKey.Color][E_ConfigKey.Dir][E_ConfigKey.Fill]
+    config[EConfigKey.Color][EConfigKey.Dir][EConfigKey.Fill]
   const dirBorderColor: string =
-    config[E_ConfigKey.Color][E_ConfigKey.Dir][E_ConfigKey.Border]
+    config[EConfigKey.Color][EConfigKey.Dir][EConfigKey.Border]
   const dirTextColor: string =
-    config[E_ConfigKey.Color][E_ConfigKey.Dir][E_ConfigKey.Text]
+    config[EConfigKey.Color][EConfigKey.Dir][EConfigKey.Text]
 
   return composeDirNodeDefLine(
     dirNodeName,

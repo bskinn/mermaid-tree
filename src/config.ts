@@ -1,35 +1,35 @@
 import type { TConfigFull } from './types'
 
-import { E_ConfigKey, E_NodeShape } from './enums'
+import { EConfigKey, ENodeShape } from './enums'
 
 const CONFIG_DEFAULTS: TConfigFull = {
-  [E_ConfigKey.Color]: {
-    [E_ConfigKey.Line]: '#003812',
-    [E_ConfigKey.Files]: {
-      [E_ConfigKey.Border]: '#d3f1c8',
-      [E_ConfigKey.Fill]: '#e8ffe0',
-      [E_ConfigKey.Text]: '#000000',
+  [EConfigKey.Color]: {
+    [EConfigKey.Line]: '#003812',
+    [EConfigKey.Files]: {
+      [EConfigKey.Border]: '#d3f1c8',
+      [EConfigKey.Fill]: '#e8ffe0',
+      [EConfigKey.Text]: '#000000',
     },
-    [E_ConfigKey.Dir]: {
-      [E_ConfigKey.Border]: '#d3f1c8',
-      [E_ConfigKey.Fill]: '#136f17',
-      [E_ConfigKey.Text]: '#ffffff',
+    [EConfigKey.Dir]: {
+      [EConfigKey.Border]: '#d3f1c8',
+      [EConfigKey.Fill]: '#136f17',
+      [EConfigKey.Text]: '#ffffff',
     },
   },
-  [E_ConfigKey.Shape]: {
-    [E_ConfigKey.Files]: E_NodeShape.Square,
-    [E_ConfigKey.Dir]: E_NodeShape.Rounded,
+  [EConfigKey.Shape]: {
+    [EConfigKey.Files]: ENodeShape.Square,
+    [EConfigKey.Dir]: ENodeShape.Rounded,
   },
-  [E_ConfigKey.Text]: {
-    [E_ConfigKey.Size]: 10,
+  [EConfigKey.Text]: {
+    [EConfigKey.Size]: 10,
   },
-  [E_ConfigKey.Mermaid]: {
-    [E_ConfigKey.DirNodeName]: 'dirNode',
-    [E_ConfigKey.Indent]: 2,
-    [E_ConfigKey.Suffix]: { [E_ConfigKey.Files]: '____files' },
+  [EConfigKey.Mermaid]: {
+    [EConfigKey.DirNodeName]: 'dirNode',
+    [EConfigKey.Indent]: 2,
+    [EConfigKey.Suffix]: { [EConfigKey.Files]: '____files' },
   },
-  [E_ConfigKey.System]: {
-    [E_ConfigKey.DryRun]: false,
+  [EConfigKey.System]: {
+    [EConfigKey.DryRun]: false,
   },
 }
 
