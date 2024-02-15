@@ -1,3 +1,4 @@
+export { mergeConfig } from './config'
 export { NODE_SHAPES } from './consts'
 export { ENodeShape } from './enums'
 export { buildDirTree, renderDirTree } from './filesystem'

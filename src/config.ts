@@ -1,8 +1,10 @@
-import type { TConfigFull } from './types'
+import type { TConfigFull, TConfigPartial } from './types'
 
 import { EConfigKey, ENodeShape } from './enums'
 
-const CONFIG_DEFAULTS: TConfigFull = {
+import deepmerge from 'deepmerge'
+
+export const CONFIG_DEFAULTS: TConfigFull = {
   [EConfigKey.Color]: {
     [EConfigKey.Line]: '#003812',
     [EConfigKey.Files]: {
@@ -31,6 +33,27 @@ const CONFIG_DEFAULTS: TConfigFull = {
   [EConfigKey.System]: {
     [EConfigKey.DryRun]: false,
   },
+}
+
+/**
+ * Deep-merge the indicated config objects against the default config.
+ *
+ * @param {Array<TConfigPartial>} configs - List of the config fragments to
+ *    merge. Higher-priority fragments should be placed _later_ in the list.
+ * @returns {TConfigFull} Fully merged config object
+ */
+export const mergeConfig = (...configs: Array<TConfigPartial>): TConfigFull => {
+  var newConfig: TConfigFull = JSON.parse(JSON.stringify(CONFIG_DEFAULTS))
+
+  for (let conf of configs) {
+    // Props in the 2nd argument stomp those in the first, so higher priority
+    // goes *second*.
+    // Annoying to have to use the 'as', since a TConfigPartial will never
+    // add a new field to the TConfigFull type of newConfig. Oh well.
+    newConfig = deepmerge(newConfig, conf) as TConfigFull
+  }
+
+  return newConfig
 }
 
 export default CONFIG_DEFAULTS
