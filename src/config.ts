@@ -45,12 +45,14 @@ export const CONFIG_DEFAULTS: TConfigFull = {
 export const mergeConfig = (...configs: Array<TConfigPartial>): TConfigFull => {
   var newConfig: TConfigFull = JSON.parse(JSON.stringify(CONFIG_DEFAULTS))
 
-  for (let conf of configs) {
-    // Props in the 2nd argument stomp those in the first, so higher priority
-    // goes *second*.
-    // Annoying to have to use the 'as', since a TConfigPartial will never
-    // add a new field to the TConfigFull type of newConfig. Oh well.
-    newConfig = deepmerge(newConfig, conf) as TConfigFull
+  if (configs[0] !== undefined) {
+    for (let conf of configs) {
+      // Props in the 2nd argument stomp those in the first, so higher priority
+      // goes *second*.
+      // Annoying to have to use the 'as', since a TConfigPartial will never
+      // add a new field to the TConfigFull type of newConfig. Oh well.
+      newConfig = deepmerge(newConfig, conf) as TConfigFull
+    }
   }
 
   return newConfig
