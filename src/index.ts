@@ -1,10 +1,26 @@
-export { mergeConfig } from './config'
-export { NODE_SHAPES } from './consts'
-export { ENodeShape } from './enums'
-export { buildDirTree, renderDirTree } from './filesystem'
-export {
+import { ENodeShape } from './enums'
+
+import { mergeConfig } from './config'
+import { NODE_SHAPES } from './consts'
+import { buildDirTree, renderDirTree } from './filesystem'
+import {
   assembleAllNodeSources,
   assembleNodeSource,
   composeMermaidSource,
 } from './source-gen'
-export { injectMermaidSource, updateMarkdownFile } from './source-inject'
+import { injectMermaidSource, updateMarkdownFile } from './source-inject'
+
+export const internal = {
+  assembleAllNodeSources,
+  assembleNodeSource,
+  buildDirTree,
+  composeMermaidSource,
+  ENodeShape,
+  injectMermaidSource,
+  mergeConfig,
+  NODE_SHAPES,
+  renderDirTree,
+  updateMarkdownFile,
+}
+
+export { makeDiagramString } from './user-api'
